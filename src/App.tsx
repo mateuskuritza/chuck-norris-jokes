@@ -1,9 +1,13 @@
 import Theme from './Theme';
+import { FavoriteJokesProvider } from './contexts/FavoriteJokesContext';
 
 function App() {
+
     return (
         <Theme>
-            <p>hello world</p>
+            <FavoriteJokesProvider>
+                <p>Hello World</p>
+            </FavoriteJokesProvider>
         </Theme>
     );
 }
