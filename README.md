@@ -1,4 +1,4 @@
-# TrackIt
+# Chuck Jokes
 
 Acesse o projeto clicando <a href="https://chuck-norris-jokes-fawn.vercel.app/">aqui</a>!
 
