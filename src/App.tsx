@@ -4,20 +4,18 @@ import { useState } from "react";
 import Search from "./components/Search";
 import IJokeValue from "./interfaces/IJokeValue";
 import JokesList from "./components/JokesList";
-import { makeStyles } from "@material-ui/core";
+import styled from "styled-components";
 
 function App() {
 	const [jokes, setJokes] = useState<IJokeValue[]>([]);
 
-	const classes = styles();
-
 	return (
 		<Theme>
 			<FavoriteJokesProvider>
-				<div className={classes.root}>
+				<MainContainer>
 					<Search setJokes={setJokes} />
 					<JokesList jokes={jokes} />
-				</div>
+				</MainContainer>
 			</FavoriteJokesProvider>
 		</Theme>
 	);
@@ -25,16 +23,26 @@ function App() {
 
 export default App;
 
-const styles = makeStyles({
-	root: {
-		backgroundImage: "url(./images/chucknorriswallpaper.jpg)",
-		backgroundPosition: "center",
-		backgroundSize: "cover",
-		backgroundRepeat: "no-repeat",
-		height: "100vh",
-		width: "100vw",
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "space-evenly",
-	},
-});
+const MainContainer = styled.div`
+	background-image: url("./images/chucknorriswallpaper.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	> div {
+		width: 100%;
+		margin: 30px;
+	}
+
+	@media (max-width: 800px) {
+		flex-direction: column;
+		> div {
+			width: 90%;
+		}
+	}
+`;

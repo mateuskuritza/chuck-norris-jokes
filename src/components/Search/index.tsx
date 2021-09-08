@@ -12,8 +12,8 @@ import Toast from "./Toast";
 const styles = makeStyles({
 	container: {
 		backgroundColor: "#493C43",
-		width: "400px",
-		height: "400px",
+		height: 300,
+		minWidth: 300,
 		boxShadow: "0 0 10px 3px #000000",
 		borderRadius: "20px",
 		display: "flex",
