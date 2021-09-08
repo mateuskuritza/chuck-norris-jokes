@@ -10,23 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Toast from "./Toast";
 
 const styles = makeStyles({
-	root: {
-		backgroundImage: "url(./images/chucknorriswallpaper.jpg)",
-		backgroundPosition: "center",
-		backgroundSize: "cover",
-		backgroundRepeat: "no-repeat",
-		height: "100vh",
-		width: "100vw",
-		display: "flex",
-		alignItems: "center",
-	},
 	container: {
 		backgroundColor: "#493C43",
 		width: "400px",
 		height: "400px",
 		boxShadow: "0 0 10px 3px #000000",
 		borderRadius: "20px",
-		margin: "0 3%",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
@@ -86,7 +75,7 @@ export default function Search({ setJokes }: { setJokes: Function }) {
 	}, []);
 
 	return (
-		<div className={classes.root}>
+		<div>
 			<Toast />
 			<Container maxWidth="sm" className={classes.container}>
 				<FormGroup className={classes.forms}>
@@ -121,7 +110,13 @@ export default function Search({ setJokes }: { setJokes: Function }) {
 						color="primary"
 						className={classes.inputs}
 					/>
-					<CustomizedSelect options={categories} selected={category} select={setCategory} />
+					<FormControlLabel
+						control={<CustomizedSelect options={categories} selected={category} select={setCategory} />}
+						label="Categoria"
+						labelPlacement="start"
+						color="primary"
+						className={classes.inputs}
+					/>
 				</FormGroup>
 				<Button onClick={searchJokes} color="primary" variant="contained">
 					{" "}
